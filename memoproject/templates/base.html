@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Memoproject</title>
+</head>
+<body>
+  {% if user.is_authenticated %}
+    <p>Hola, {{ user.username }} | <a href="{% url 'logout' %}">Salir</a></p>
+  {% else %}
+    <p><a href="{% url 'login' %}">Entrar</a></p>
+  {% endif %}
+
+  {% block content %}{% endblock %}
+</body>
+</html>
